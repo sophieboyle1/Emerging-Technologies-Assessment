@@ -1,0 +1,43 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Project data (optional, for excluding datasets)
+data/
+
+# macOS system files (unneeded in Windows)
+.DS_Store
+
+# Windows system files
+Thumbs.db
+desktop.ini
+
+# Python virtual environments
+venv/
+ENV/
+
+# Windows thumbnail cache files
+*.stackdump
+
+# Logs and other temporary files
+*.log
+*.tmp
+*.temp
+
+# Visual Studio Code files (if you are using VSCode)
+.vscode/
+
+# Exclude any binary executables
+*.exe
+*.dll
+*.pdb
+
+# System volume information (hidden Windows folder)
+System Volume Information/
