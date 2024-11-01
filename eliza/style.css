@@ -1,0 +1,96 @@
+/* global styling */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e3f2e1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* Header styling */
+header {
+    width: 100%;
+    background-color: #4a7c59;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+}
+
+header h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* Chat container styling */
+.chat-container {
+    width: 90%;
+    max-width: 600px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+/* Conversation area styling */
+#conversation-area {
+    flex-grow: 1;
+    overflow-y: auto;
+    max-height: 400px;
+    padding: 10px;
+    border: 1px solid #c3d1b8;
+    border-radius: 5px;
+}
+
+/* Message styling */
+.message {
+    padding: 8px 12px;
+    margin: 5px 0;
+    border-radius: 20px;
+    max-width: 70%;
+}
+
+.eliza-message {
+    background-color: #c3d1b8; 
+    color: #2f4f4f;
+    align-self: flex-start;
+}
+
+.user-message {
+    background-color: #4a7c59;
+    color: white;
+    align-self: flex-end;
+}
+
+/* Input area styling */
+#input-area {
+    display: flex;
+    gap: 10px;
+}
+
+#user-input {
+    flex-grow: 1;
+    padding: 8px;
+    border-radius: 20px;
+    border: 1px solid #c3d1b8; 
+}
+
+#send-button {
+    background-color: #4a7c59; 
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+}
