@@ -50,6 +50,26 @@ Available online at: https://web.stanford.edu/~jurafsky/slp3/
 
 ### Task 2 -
 
+#### Goal
+
+The goal of this task is to create 10,000 characters of text that resembles English using the trigram model from task 1. The model starts with "TH" as a seed and uses patterns in the original text to predict each subsequent character, producing an output that should sound substantially like English.
+
+#### How It Works
+
+#### Predicting Characters:
+I start the text generating process with "TH" and work my way up from there.
+The code looks for trigrams in the model that begin with the string's final two characters for every new character.
+More frequent patterns in the original text have a higher chance of being selected as the following character because it is determined by the trigram frequency. As a result, the created text has a natural flow that mimics typical English letter pairings.
+
+#### Creating the Text: 
+This procedure keeps going until the text reaches 10,000 characters, adding one character at a time.
+By adhering to these probabilities, I can produce a text that has words and sequences that are fairly familiar and reads like genuine English.
+
+#### Testing the Output:
+To see if the output looks like English, the first 1,000 characters are printed. This demonstrates that the generating is operating as planned.
+Character selection will be somewhat random because it is dependent on probability. The material may appear to be in English, yet it may contain odd sentences or gibberish.
+By calculating the quantity of identifiable English terms, Task 3 will examine the created text's resemblance to authentic English in greater detail.
+
 ### Task 3 -
 
 ### Task 4 - 
