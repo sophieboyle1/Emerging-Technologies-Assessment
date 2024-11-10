@@ -2,42 +2,70 @@ const userInput = document.getElementById("user-input");
 const sendButton = document.getElementById("send-button");
 const conversationArea = document.getElementById("conversation-area");
 
-// Define keywords and responses
-const elizaResponses = {
-    "sorry": ["No need to apologize.", "It's okay, please go on."],
-    "mother": ["Tell me more about your mother.", "How do you feel about your mother?", "What comes to mind when you think about your mother?"],
-    "father": ["How does your relationship with your father make you feel?", "Please tell me more about your father."],
-    "family": ["Tell me more about your family.", "How do you feel about your family?", "Does anyone in your family stand out to you?"],
-    "feel": ["Why do you feel that way?", "Do you often feel this way?", "What do these feelings make you think about?"],
-    "sad": ["I'm sorry to hear that. What do you think is causing these feelings?", "Tell me more about what's making you feel sad."],
-    "happy": ["What’s making you feel happy?", "How long have you felt this way?", "Do you feel this way often?"],
-    "angry": ["Why do you feel angry?", "Tell me more about what’s making you angry.", "What usually helps when you feel angry?"],
-    "friend": ["Tell me more about your friends.", "Do you have a best friend?", "What do you value in your friendships?"],
-    "relationship": ["What is important to you in a relationship?", "How do you feel about your relationships?", "What does a good relationship look like to you?"],
-    "help": ["How can I help you?", "What do you need help with?", "I’m here to help. What’s on your mind?"],
-    "why": ["Why do you ask?", "Can you explain why that’s on your mind?", "What do you think the reason is?"],
-    "because": ["Is that the only reason?", "Can you think of other reasons?", "What led you to feel that way?"],
-    "think": ["What makes you think that?", "Why do you think so?", "Do you often think about this?"],
-    "yes": ["I see. Can you tell me more?", "Why do you say yes?", "Can you elaborate on that?"],
-    "no": ["Why do you say no?", "What makes you feel that way?", "Is there a reason you disagree?"],
-    "dream": ["What did you dream about?", "How did the dream make you feel?", "Do you often remember your dreams?"],
-    "life": ["What about your life would you like to discuss?", "Tell me more about your life.", "How do you feel about your life at the moment?"],
-    "work": ["How do you feel about your work?", "What kind of work do you do?", "Is work something that’s on your mind a lot?"],
-    "anxious": ["What is making you feel anxious?", "How long have you been feeling this way?", "Does talking about it help?"],
-    "fear": ["What are you afraid of?", "Why does that cause you fear?", "Have you felt this fear before?"],
-    "love": ["Who or what do you love?", "How does love make you feel?", "Can you describe what love means to you?"],
-    "hate": ["What makes you feel that way?", "Why do you feel hatred?", "Have you felt this way for a long time?"],
-    "bored": ["What usually makes you feel better?", "Why do you feel bored?", "What do you wish you were doing instead?"],
-    "alone": ["Do you often feel alone?", "What does being alone mean to you?", "Would you like to talk more about this feeling?"],
-    "friend": ["Tell me about your friends.", "What’s something you appreciate about your friends?", "How do your friends make you feel?"],
-    "can you": ["What would you like me to do?", "What do you need help with?", "I’m here to listen."],
-    "i am": ["Why do you feel this way?", "Is this feeling common for you?", "What makes you say that?"],
-    "i want": ["What would it mean if you got what you want?", "Why do you want that?", "How would your life change if you had it?"],
-    "i need": ["Why do you need that?", "How does it feel to need this?", "What makes this so important to you?"]
-};
+let elizaResponses = {};
+
+// function to fetch and parse responses.txt
+async function loadResponses() {
+    try {
+        const response = await fetch("responses.txt");
+        const text = await response.text();
+        parseResponses(text);
+    } catch (error) {
+        console.error("Error loading responses:", error);
+    }
+}
+
+// function to parse the responses.txt content
+function parseResponses(text) {
+    const lines = text.split("\n");
+    let keyword = null;
+    elizaResponses = {};
+
+    lines.forEach(line => {
+        line = line.trim();
+        if (line.startsWith("#") || line === "") {
+            return; // skip comments and empty lines
+        }
+
+        if (line.startsWith("(?i)")) {
+            // line is a keyword
+            keyword = line.replace("(?i)", "").trim();
+            elizaResponses[keyword] = [];
+        } else if (keyword) {
+            // line is a response for the current keyword
+            elizaResponses[keyword].push(line);
+        }
+    });
+}
+
+// function to generate a response based on user input
+function generateElizaResponse(userMessage) {
+    const lowerCaseMessage = userMessage.toLowerCase();
+    
+    // iterate through each keyword and pattern
+    for (const [pattern, responses] of Object.entries(elizaResponses)) {
+        const regex = new RegExp(pattern, "i"); // create a case-insensitive regex
+        const match = lowerCaseMessage.match(regex); // match user input with the pattern
+        
+        if (match) {
+            // select a random response 
+            let response = responses[Math.floor(Math.random() * responses.length)];
+            
+            // replace placeholders like $1 with the actual matched groups
+            for (let i = 1; i < match.length; i++) {
+                response = response.replace(`$${i}`, match[i]);
+            }
+            
+            return response;
+        }
+    }
+    
+    // default response if no patterns matched
+    return "Please tell me more about that.";
+}
 
 
-// function to display a message in the conversation area
+// function to display a message
 function displayMessage(message, className) {
     const messageElement = document.createElement("div");
     messageElement.className = `message ${className}`;
@@ -46,32 +74,13 @@ function displayMessage(message, className) {
     conversationArea.scrollTop = conversationArea.scrollHeight;
 }
 
-// function to generate a response based on user input
-function generateElizaResponse(userMessage) {
-    const lowerCaseMessage = userMessage.toLowerCase();
-    
-    // check for keywords in the user's message
-    for (const keyword in elizaResponses) {
-        if (lowerCaseMessage.includes(keyword)) {
-            const responses = elizaResponses[keyword];
-            return responses[Math.floor(Math.random() * responses.length)]; // Select a random response
-        }
-    }
-    
-    // default response
-    return "Please tell me more about that.";
-}
-
 // function to handle user message submission and response
 function handleUserMessage() {
-    const message = userInput.value.trim(); // get the user input and trim whitespace
+    const message = userInput.value.trim();
     if (message) {
         displayMessage(message, 'user-message');
-
-        // clear the input field
         userInput.value = '';
 
-        // generate and display ELIZA's response
         const elizaResponse = generateElizaResponse(message);
         displayMessage(elizaResponse, 'eliza-message');
     }
@@ -86,3 +95,6 @@ userInput.addEventListener("keypress", function(event) {
         handleUserMessage();
     }
 });
+
+// load responses when the page loads
+window.addEventListener("load", loadResponses);

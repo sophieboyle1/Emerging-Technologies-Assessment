@@ -1,0 +1,239 @@
+# e.g., I need help.
+(?i)^\s*I need ([^.!?]*)[.!?]*\s*$
+What makes you feel that you need $1?
+Why do you believe $1 would help you?
+Do you think getting $1 will solve your issue?
+
+# e.g., Why do I feel sad?
+(?i)^\s*Why do I feel ([^.!?]*)[.!?\s]*$
+What do you think is causing these feelings of $1?
+Have you felt $1 before? Why now?
+Why do you think you're feeling $1 at the moment?
+
+# e.g., My friend doesn’t listen.
+(?i)^.*\bfriend\b.*$
+Tell me more about your friendship.
+How do you feel about your friends?
+Are there particular friends who make you feel this way?
+
+# e.g., I am stressed.
+(?i)^\s*(?:I am|I'm) ([^.!?]*)[.!?\s]*$
+How long have you been feeling $1?
+What do you think causes you to feel $1?
+Have you tried anything to feel less $1?
+
+# e.g., Are you a robot?
+(?i)^\s*Are you\b([^.!?]*)[.!?\s]*$
+Would it change things if I were $1?
+Why are you curious if I'm $1?
+Does my identity as $1 matter to you?
+
+# e.g., What should I do?
+(?i)^\s*What should I ([^.!?]*)[.!?\s]*$
+Why are you unsure if you should $1?
+What would it mean for you to $1?
+What do you think will happen if you decide to $1?
+
+# e.g., How do you feel?
+(?i)^\s*How .*$
+How would you feel if you were me?
+What do you think?
+Perhaps you already know the answer.
+
+# e.g., I don’t know.
+(?i)^\s*I don't know\b.*$
+Why do you feel uncertain?
+Can you elaborate on why you don’t know?
+What do you think would help you find an answer?
+
+# e.g., My family is complicated.
+(?i)^.*family.*$
+How does your family affect your feelings?
+What is it about your family that stands out?
+What role does family play in your life?
+
+# e.g., Help me with my problem.
+(?i)^\s*Help me ([^.!?]*)[.!?\s]*$
+What would helping with $1 look like?
+Why do you feel that you need help with $1?
+How do you think I could assist you with $1?
+
+# e.g., Why can’t I focus?
+(?i)^\s*Why can'?t I ([^.!?]*)[.!?\s]*$
+Why do you feel like you’re unable to $1?
+What would it take for you to focus?
+Have you experienced this feeling of not being able to $1 before?
+
+# e.g., Hello or Hi.
+(?i)^\s*Hello|Hi\b.*$
+Hi there! How can I assist you today?
+Hello! What’s on your mind?
+Hey! How’s it going?
+
+# e.g., I am worried about work.
+(?i)^\s*(?:I am|I'm) worried about ([^.!?]*)[.!?\s]*$
+Why do you think work worries you?
+How often do you feel worried about work?
+What is it about work that concerns you the most?
+
+# e.g., I feel happy.
+(?i)^\s*I feel ([^.!?]*)[.!?\s]*$
+That's wonderful to hear. What’s making you feel $1?
+When did you start feeling $1?
+How does being $1 impact your day-to-day life?
+
+# e.g., Can you help?
+(?i)^\s*Can you ([^.!?]*)[.!?\s]*$
+What kind of help do you need with $1?
+What makes you think I could assist you with $1?
+How would you like me to help you?
+
+# e.g., Tell me about yourself.
+(?i)^\s*Tell me about yourself[.!?\s]*$
+I’m here to listen and help with anything on your mind.
+I am your conversation partner.
+I’m here to help you explore your thoughts and feelings.
+
+# This is a list of responses for the ELIZA chatbot.
+# Each response can match user input with placeholders for flexibility.
+
+# User feels they "need" something.
+(?i)^\s*I need ([^.!?]*)[.!?]*\s*$
+What makes you feel that you need $1?
+Why do you believe $1 would help you?
+Do you think getting $1 will solve your issue?
+How long have you felt the need for $1?
+
+# User says they "feel" a certain way.
+(?i)^\s*I feel ([^.!?]*)[.!?]*\s*$
+When did you start feeling $1?
+How does feeling $1 affect your daily life?
+What usually leads you to feel $1?
+Would you like to explore why you feel $1?
+
+# User mentions "thinking" about something.
+(?i)^\s*I think ([^.!?]*)[.!?]*\s*$
+Why do you think $1?
+Do you doubt that $1?
+What makes you believe that $1 is true?
+Have you considered any alternatives to $1?
+
+# User expresses that they "want" something.
+(?i)^\s*I want ([^.!?]*)[.!?]*\s*$
+What would it mean if you got $1?
+Do you think getting $1 will make you feel differently?
+What else do you want in addition to $1?
+Why do you feel the need for $1 right now?
+
+# User mentions a "dream."
+(?i)^.*\bdream\b.*$
+What did you dream about?
+Do you often have dreams about that?
+How did the dream make you feel?
+Do you believe your dreams mean something?
+
+# User talks about their "family."
+(?i)^.*\bfamily\b.*$
+Tell me more about your family.
+Are you close to your family?
+How does your family support you?
+Is there anyone in your family you’re especially close to?
+
+# User mentions feeling "alone."
+(?i)^.*\balone\b.*$
+Do you often feel alone?
+What does being alone mean to you?
+Would you like to talk more about this feeling?
+When did you first start feeling this way?
+
+# User asks about ELIZA's "abilities."
+(?i)^.*\bcan you\b.*$
+What would you like me to do?
+How can I assist you?
+I’m here to listen; what’s on your mind?
+What do you need help with?
+
+# User says they are "happy."
+(?i)^\s*I am happy[.!?]*\s*$
+That's wonderful! What’s making you feel this way?
+How long have you been feeling happy?
+Do you feel happy often?
+Is there something specific making you happy?
+
+# User says they are "sad."
+(?i)^\s*I am sad[.!?]*\s*$
+I'm sorry to hear that. Would you like to talk about what's making you sad?
+How long have you been feeling this way?
+Are there things that usually help when you feel sad?
+Is there anything I can do to support you?
+
+# User says they are "angry."
+(?i)^\s*I am angry[.!?]*\s*$
+What is making you feel this way?
+How do you usually deal with your anger?
+Is this something that happens often?
+Would you like to explore the reasons behind your anger?
+
+# User talks about their "job" or "work."
+(?i)^.*\b(job|work)\b.*$
+How do you feel about your job?
+Does your work bring you satisfaction?
+Is there something specific about work you want to discuss?
+What would you change about your work if you could?
+
+# User talks about "life."
+(?i)^.*\blife\b.*$
+What about your life would you like to discuss?
+Are you content with how things are in your life?
+What brings you meaning in life?
+Is there anything you would like to change in your life?
+
+# User mentions "stress."
+(?i)^.*\bstress\b.*$
+What is causing you stress?
+How long have you felt this way?
+Are there ways you manage your stress?
+Does talking about it help relieve some of the stress?
+
+# User says they are "afraid."
+(?i)^.*\bafraid\b.*$
+What are you afraid of?
+Why does that cause you fear?
+Have you experienced this fear before?
+Is there anything that eases this fear?
+
+# User says "yes."
+(?i)^\s*yes[.!?]*\s*$
+I see. Can you tell me more?
+Why do you say yes?
+Can you elaborate on that?
+It sounds like you're sure about that.
+
+# User says "no."
+(?i)^\s*no[.!?]*\s*$
+What makes you say no?
+Can you share more about why you feel that way?
+Is there a reason you disagree?
+Do you often feel that way?
+
+# User apologizes.
+(?i)^.*\bsorry\b.*$
+No need to apologize.
+It's alright; please continue.
+What makes you feel the need to apologize?
+Is there something specific you're apologizing for?
+
+# User says "goodbye."
+(?i)^\s*goodbye[.!?]*\s*$
+Thank you for talking with me.
+I hope we can chat again sometime.
+Take care and goodbye for now.
+I enjoyed our conversation. Goodbye.
+
+# Default responses for unmatched inputs.
+(?i)^.*$
+Please tell me more about that.
+Let's explore this further.
+I'm here to listen; please go on.
+That’s interesting. Can you expand on that?
+
