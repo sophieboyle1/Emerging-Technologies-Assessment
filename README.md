@@ -7,11 +7,13 @@ This research uses publicly available text data from English publications to con
 
 ### Table of Contents
 
-1. [Task 1: Third-Order Letter Approximation Model](#task-1-third-order-letter-approximation-model)
-2. [Task 2: Third-Order Letter Approximation Generation](#task-2-third-order-letter-approximation-generation)
-3. [Task 3: Analyzing the Generated Text](#task-3-analyzing-the-generated-text)
-4. [Task 4: Exporting the Model as JSON](#task-4-exporting-the-model-as-json)
+1. [Task 1: Third-Order Letter Approximation Model](#task-1)
+2. [Task 2: Third-Order Letter Approximation Generation](#task-2)
+3. [Task 3: Analyzing the Generated Text](#task-3)
+4. [Task 4: Exporting the Model as JSON](#task-4)
 5. [Eliza Chatbot](#eliza-chatbot)
+6. [References](#references)
+
 
 ---
 
@@ -135,3 +137,46 @@ The JSON file, trigrams.json, contains all the trigrams and their frequencies, s
 ```
 
 ### Eliza Chatbot -
+
+### References - 
+
+### References
+
+- **Reading and Writing Files in Python**  
+  - [Python File I/O Documentation](https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files)  
+  - [W3Schools - Python File Handling](https://www.w3schools.com/python/python_file_handling.asp)
+
+- **Working with Directories in Python**  
+  - [Python OS Module Documentation](https://docs.python.org/3/library/os.html#module-os)  
+  - [GeeksforGeeks - Iterate over files in a directory](https://www.geeksforgeeks.org/how-to-iterate-over-files-in-directory-using-python/)
+
+- **String Processing in Python**  
+  - [Python String Methods Documentation](https://docs.python.org/3/library/stdtypes.html#string-methods)  
+  - [Using Regex in Python](https://www.w3schools.com/python/python_regex.asp)  
+  - [Python re Module Documentation](https://docs.python.org/3/library/re.html)  
+  - [StackOverflow - Finding substrings with Python](https://stackoverflow.com/a/51456576)
+
+- **Data Structures and Iterables in Python**  
+  - [Python Dictionary Documentation](https://docs.python.org/3/tutorial/datastructures.html#dictionaries)  
+  - [Python enumerate() Function](https://docs.python.org/3/library/functions.html#enumerate)
+
+- **JSON Manipulation in Python**  
+  - [Python JSON Library Documentation](https://docs.python.org/3/library/json.html)
+
+- **Probability and Weighted Random Sampling**  
+  - [Python Random Library Documentation](https://docs.python.org/3/library/random.html#random.choices)  
+  - [StackOverflow - Weighted Random Choices](https://stackoverflow.com/a/3679747)
+
+- **Eliza Chatbot and NLP Fundamentals**  
+  - [Weizenbaum, J. (1966). ELIZA - A Computer Program for the Study of Natural Language Communication Between Man and Machine.](https://dl.acm.org/doi/10.1145/365153.365168)  
+  - [NLP Fundamentals - NLTK Documentation](https://www.nltk.org/)
+
+- **N-Gram Models and Language Modeling**  
+  - [Shannon, C. E. (1948). A Mathematical Theory of Communication.](https://people.math.harvard.edu/~ctm/home/text/others/shannon/entropy/entropy.pdf)  
+  - [Jurafsky, D., & Martin, J. H. (2008). Speech and Language Processing.](https://web.stanford.edu/~jurafsky/slp3/)
+
+- **AI Tools Used in Research**  
+  - [OpenAI ChatGPT](https://openai.com/chatgpt): Used for research purposes and for generating test conversations in the Eliza chatbot.  
+  - [GitHub Copilot](https://github.com/features/copilot): : Assisted with brainstorming and refining explanations.
+
+
