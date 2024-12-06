@@ -5,6 +5,16 @@
 This research uses publicly available text data from English publications to construct a third-order letter approximation model. The objective is to learn trigram patterns and use them to produce text that is similar to English.
 - https://www.gutenberg.org/
 
+### Table of Contents
+
+1. [Task 1: Third-Order Letter Approximation Model](#task-1-third-order-letter-approximation-model)
+2. [Task 2: Third-Order Letter Approximation Generation](#task-2-third-order-letter-approximation-generation)
+3. [Task 3: Analyzing the Generated Text](#task-3-analyzing-the-generated-text)
+4. [Task 4: Exporting the Model as JSON](#task-4-exporting-the-model-as-json)
+5. [Eliza Chatbot](#eliza-chatbot)
+
+---
+
 ### Task 1 -
 
 #### Third-Order Letter Approximation Model
@@ -18,6 +28,7 @@ Text cleaning: All non-letter characters, except for spaces and periods, were re
 
 #### Trigram Model Construction
 The model captures every sequence of three characters along with its frequency in the text. A dictionary stores these counts, where each trigram is a key, and its frequency is the value.
+
 ```
 {
     "THE": 8476,
@@ -103,3 +114,5 @@ valid_word_percentage = (valid_word_count / total_word_count) * 100
 ```
 
 ### Task 4 - 
+
+### Eliza Chatbot -
