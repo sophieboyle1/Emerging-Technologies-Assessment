@@ -115,4 +115,23 @@ valid_word_percentage = (valid_word_count / total_word_count) * 100
 
 ### Task 4 - 
 
+#### Goal
+
+For this task, I exported the trigram model as a JSON file, making it reusable for future analyses or integrations. This step ensures that the model can be shared or utilized without needing to regenerate it.
+
+#### Implementation
+
+I used Python’s json module to serialize the trigram model into a structured file called trigrams.json. The JSON format provides a lightweight, human-readable way to store the trigram data. To keep the output organized, I included formatting like sorted keys and indentation.
+
+The JSON file, trigrams.json, contains all the trigrams and their frequencies, structured for easy access. Here’s a sample of the output:
+
+```
+{
+    "THE": 8476,
+    "HE ": 7226,
+    " IS": 5423
+}
+
+```
+
 ### Eliza Chatbot -
