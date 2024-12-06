@@ -72,4 +72,34 @@ By calculating the quantity of identifiable English terms, Task 3 will examine t
 
 ### Task 3 -
 
+#### Goal
+
+For this task, my goal was to evaluate how effective my trigram model is at generating realistic text. To do this, I analyzed the text output by comparing it against a list of valid English words provided in the 'words.txt' file. The idea is to see what percentage of the generated words were actual English words.
+
+#### How It Works
+
+#### Loaded the Word List: 
+First, I loaded the words.txt file, which contains a list of valid English words. I stored these words in a Python set for quick lookups.
+
+```
+with open("data/words.txt", "r") as file:
+    valid_words = set(file.read().splitlines())
+```
+
+#### Generated a Block of Text: 
+Using the trigram model I created in Task 1, I generated a 10,000-character block of text. The generation started with the seed "TH" and added one character at a time, based on the probabilities from the trigram model.
+
+```
+generated_text = generate_text(trigram_model, seed="TH", length=10000)
+```
+
+#### Analyzed the Text: 
+I split the generated text into seperate words and checked each one against the valid words in words.txt. This allowed me to count how many of the words were valid English words. Then, I calculated the percentage of valid words in the total text.
+
+```
+valid_word_count, total_word_count = count_valid_words(generated_text, valid_words)
+valid_word_percentage = (valid_word_count / total_word_count) * 100
+
+```
+
 ### Task 4 - 
