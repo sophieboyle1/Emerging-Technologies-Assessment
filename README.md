@@ -2,9 +2,6 @@
 
 ## Trigram Language Model Project - Sophie Boyle G00410444
 
-This research uses publicly available text data from English publications to construct a third-order letter approximation model. The objective is to learn trigram patterns and use them to produce text that is similar to English.
-- https://www.gutenberg.org/
-
 ### Table of Contents
 
 1. [Task 1: Third-Order Letter Approximation Model](#task-1)
@@ -16,6 +13,18 @@ This research uses publicly available text data from English publications to con
 
 
 ---
+
+### Overview 
+
+-For my Emerging Technologies Project, I worked on two key components - a trigram language model and an implementation of the ELIZA chatbot.
+-The first part of the project involved creating a third-order letter approximation model. Using text data from public domain English texts from Project Gutenberg, I analyzed patterns of three consecutive characters to better understand the structure of written English. The model generates text based on these patterns, producing outputs that resemble natural English.
+-The second part of the project was building a modern version of the classic ELIZA chatbot. This involved creating a responsive chatbot in JavaScript. ELIZA responds to user input using pre-defined patterns and reflections, making the interaction feel conversational. I also deployed the chatbot using GitHub Pages, making it accessible online.
+
+### ELIZA Chatbot
+
+The ELIZA Chatbot is live and accessible via GitHub Pages.
+
+🔗 [Access the ELIZA Chatbot](https://sophieboyle1.github.io/Emerging-Technologies-Assessment/)
 
 ### Task 1 -
 
