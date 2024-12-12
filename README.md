@@ -140,8 +140,6 @@ The JSON file, trigrams.json, contains all the trigrams and their frequencies, s
 
 ### References - 
 
-### References
-
 - **Reading and Writing Files in Python**  
   - [Python File I/O Documentation](https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files)  
   - [W3Schools - Python File Handling](https://www.w3schools.com/python/python_file_handling.asp)
