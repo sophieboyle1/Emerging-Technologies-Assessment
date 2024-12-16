@@ -4,14 +4,26 @@
 
 ### Table of Contents
 
-1. [Task 1: Third-Order Letter Approximation Model](#task-1)
-2. [Task 2: Third-Order Letter Approximation Generation](#task-2)
-3. [Task 3: Analyzing the Generated Text](#task-3)
-4. [Task 4: Exporting the Model as JSON](#task-4)
-5. [Eliza Chatbot](#eliza-chatbot)
-6. [References](#references)
+1. [Installation](#Installation)
+2. [Task 1: Third-Order Letter Approximation Model](#task-1)
+3. [Task 2: Third-Order Letter Approximation Generation](#task-2)
+4. [Task 3: Analyzing the Generated Text](#task-3)
+5. [Task 4: Exporting the Model as JSON](#task-4)
+6. [Eliza Chatbot](#eliza-chatbot)
+7. [Testing](#Testing)
+8. [References](#references)
 
----
+### Installation and Setup
+
+To get started with this project, follow the steps below:
+
+1. Clone the repository
+2. Clone the GitHub repository to your local machine: git clone https://github.com/sophieboyle1/Emerging-Technologies-Assessment.git
+3. Navigate to the project directory.
+4. Change into the project directory: cd Emerging-Technologies-Assessment
+5. Run the Trigram Notebook
+6. Open the trigrams.ipynb file in Jupyter Notebook or a compatible Python environment.
+7. Execute the cells sequentially to explore the trigram language model.
 
 ### Overview 
 
@@ -24,6 +36,8 @@
 The ELIZA Chatbot is live and accessible via GitHub Pages.
 
 🔗 [Access the ELIZA Chatbot](https://sophieboyle1.github.io/Emerging-Technologies-Assessment/)
+
+
 
 ### Task 1 -
 
@@ -145,6 +159,8 @@ The JSON file, trigrams.json, contains all the trigrams and their frequencies, s
 ```
 
 ### Eliza Chatbot -
+
+
 
 ### References - 
 
