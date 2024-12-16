@@ -37,8 +37,6 @@ The ELIZA Chatbot is live and accessible via GitHub Pages.
 
 🔗 [Access the ELIZA Chatbot](https://sophieboyle1.github.io/Emerging-Technologies-Assessment/)
 
-
-
 ### Task 1 -
 
 #### Third-Order Letter Approximation Model
@@ -160,6 +158,71 @@ The JSON file, trigrams.json, contains all the trigrams and their frequencies, s
 
 ### Eliza Chatbot -
 
+#### Overview
+
+For this part of the project, I recreated a modern version of the ELIZA chatbot. ELIZA is one of the earliest examples of natural language processing, designed to simulate a conversation by responding to user inputs based on pre-defined patterns.
+
+The chatbot uses JavaScript to match user inputs with patterns using regular expressions. It responds with reflective or pre-programmed messages, creating a conversational experience that feels dynamic. The project is fully self-contained and can be run directly in a browser without relying on any external libraries or APIs.
+
+#### Features
+
+- **Dynamic Pattern Matching:**
+ The chatbot uses regex patterns to interpret user inputs and provide meaningful responses.
+- **Reflections:**
+ Pronouns like "I" and "you" are swapped dynamically to make responses feel more natural.
+- **Easy Deployment:**
+ The chatbot is hosted on GitHub Pages for quick access online.
+
+#### File Structure
+The ELIZA chatbot is located in the eliza folder of the repository. Here's what each file does:
+
+- **index.html:**
+ The main interface for the chatbot. It contains the structure of the page where you can interact with ELIZA.
+- **style.css:**
+ Adds styling to the chatbot, making the conversation area and input field visually appealing.
+- **eliza.js:**
+ Contains all the logic for the chatbot, including pattern matching and generating responses.
+
+#### Live Demo
+
+[Access the ELIZA Chatbot](https://sophieboyle1.github.io/Emerging-Technologies-Assessment/)
+
+#### How It Works
+
+The chatbot logic is based on pattern matching and text transformations:
+
+- **Pattern Matching:**
+ User input is compared against a series of regular expressions.
+- **Responses:**
+ Each pattern has a set of pre-defined responses, with placeholders to adapt dynamically based on user input.
+- **Reflections:**
+ Key words and pronouns are mirrored (e.g., "I" becomes "you") to make the conversation feel more natural.
+
+#### Pattern Matching and Responses
+```
+const patterns = [
+    { pattern: /I feel (.*)/i, response: ["Why do you feel $1?", "What makes you feel $1?"] },
+    { pattern: /hello|hi/i, response: ["Hello! How can I help you today?", "Hi there! What's on your mind?"] }
+];
+```
+
+#### Dynamic Reflections
+```
+const reflections = {
+    "I": "you",
+    "me": "you",
+    "my": "your",
+    "am": "are"
+};
+```
+
+### Testing
+
+To ensure the chatbot performs as expected:
+
+1. Test Regular Expressions: Validate that patterns correctly match inputs.
+2. Browser Compatibility: Test the chatbot on different browsers to confirm consistent behavior.
+3. User Input Scenarios: Input diverse phrases to evaluate ELIZA's responses.
 
 
 ### References - 
