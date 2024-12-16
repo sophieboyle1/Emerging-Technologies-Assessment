@@ -1,10 +1,11 @@
 # Emerging Technologies Assessment
 
-## Trigram Language Model & ElIZA Chatbot Project - Sophie Boyle G00410444
+## Trigram Language Model & ELIZA Chatbot Project - Sophie Boyle G00410444
 
 ### Table of Contents
 
 1. [Installation](#Installation)
+2. [Overview](#Overview)
 2. [Task 1: Third-Order Letter Approximation Model](#task-1)
 3. [Task 2: Third-Order Letter Approximation Generation](#task-2)
 4. [Task 3: Analyzing the Generated Text](#task-3)
@@ -17,26 +18,47 @@
 
 To get started with this project, follow the steps below:
 
-1. Clone the repository
+1. Clone the repository.
 2. Clone the GitHub repository to your local machine: git clone https://github.com/sophieboyle1/Emerging-Technologies-Assessment.git
 3. Navigate to the project directory.
-4. Change into the project directory: cd Emerging-Technologies-Assessment
-5. Run the Trigram Notebook
+4. Change into the project directory: cd Emerging-Technologies-Assessment.
+5. Run the Trigram Notebook.
 6. Open the trigrams.ipynb file in Jupyter Notebook or a compatible Python environment.
 7. Execute the cells sequentially to explore the trigram language model.
 
 ### Overview 
 
-For my Emerging Technologies Project, I worked on two key components - a trigram language model and an implementation of the ELIZA chatbot.
+For my Emerging Technologies Project, I worked on two key components:
+- **A trigram language model and an implementation of the ELIZA chatbot.**
 
 The first part of the project involved creating a third-order letter approximation model. Using text data from public domain English texts from Project Gutenberg, I analyzed patterns of three consecutive characters to better understand the structure of written English. The model generates text based on these patterns, producing outputs that resemble natural English.
 
 The second part of the project was building a modern version of the classic ELIZA chatbot. This involved creating a responsive chatbot in JavaScript. ELIZA responds to user input using pre-defined patterns and reflections, making the interaction feel conversational. I also deployed the chatbot using GitHub Pages, making it accessible online.
 
+#### Research
+Trigram models are a well-established technique in natural language processing, commonly used for tasks like text prediction. For example, Shannon's Entropy Experiment used similar principles. While I didn’t choose this approach myself, trigrams were a requirement for this project. I followed the same core ideas, focusing on character sequences to keep it manageable.
+
+Although the task specified using trigrams, I’m aware of other n-gram models like bigrams or unigrams. Trigrams offer a good middle ground, capturing enough context from the text without making the model too complex or computationally heavy.
+
+This project draws from research on statistical language models, particularly Markov chains and Shannon’s information theory. These approaches are all about predicting sequences based on historical data, which is exactly what the trigram model is designed to do.
+
+#### Literature
+This project is based on research in statistical language models, especially Markov chains and Shannon’s information theory, which both focus on predicting future data based on past data. While these theories have been developed further in more advanced machine learning models, the core idea of using past sequences to generate future ones is still what drives the trigram model.
+
+Additional References:<br>
+-Shannon, C. E. (1948). A Mathematical Theory of Communication.
+Available online at: https://people.math.harvard.edu/~ctm/home/text/others/shannon/entropy/entropy.pdf
+
+-Jelinek, F. (1990). Self-organized Language Modeling for Speech Recognition.
+Available online at: https://www.sciencedirect.com/science/article/abs/pii/S0885230885800351
+
+-Jurafsky, D., & Martin, J. H. (2008). Speech and Language Processing.
+Available online at: https://web.stanford.edu/~jurafsky/slp3/
+
 ### Task 1
 
 #### Third-Order Letter Approximation Model
-The main goal here is to create a trigram model based on five books from Project Gutenberg. By analyzing sequences of three characters, the model can predict the next letter in a text, which allows to generate sentences that somewhat resemble English writing.
+The main goal here is to create a trigram model based on five books from Project Gutenberg. By analyzing sequences of three characters, the model can predict the next letter in a text, which allows it to generate sentences that somewhat resemble English writing.
 
 #### Data Collection and Preprocessing
 I selected five English texts from Project Gutenberg in UTF-8 format. To prepare the texts:
@@ -57,26 +79,6 @@ The model captures every sequence of three characters along with its frequency i
 #### Text Generation
 To generate text, I start with two characters, then use the model to predict the next character based on what trigrams start with that two-character seed. The model picks the next character based on how often it appears, and this process continues until I get a full text 10,000 characters long.
 
-#### Research and Related Work
-Trigram models are a well-established technique in natural language processing, commonly used for tasks like text prediction. For example, Shannon's Entropy Experiment used similar principles. While I didn’t choose this approach myself, trigrams were a requirement for this project. I followed the same core ideas, focusing on character sequences to keep it manageable.
-
-Although the task specified using trigrams, I’m aware of other n-gram models like bigrams or unigrams. Trigrams offer a good middle ground, capturing enough context from the text without making the model too complex or computationally heavy.
-
-This project draws from research on statistical language models, particularly Markov chains and Shannon’s information theory. These approaches are all about predicting sequences based on historical data, which is exactly what the trigram model is designed to do.
-
-#### Building on Literature
-This project is based on research in statistical language models, especially Markov chains and Shannon’s information theory, which both focus on predicting future data based on past data. While these theories have been developed further in more advanced machine learning models, the core idea of using past sequences to generate future ones is still what drives the trigram model.
-
-Additional References:<br>
--Shannon, C. E. (1948). A Mathematical Theory of Communication.
-Available online at: https://people.math.harvard.edu/~ctm/home/text/others/shannon/entropy/entropy.pdf
-
--Jelinek, F. (1990). Self-organized Language Modeling for Speech Recognition.
-Available online at: https://www.sciencedirect.com/science/article/abs/pii/S0885230885800351
-
--Jurafsky, D., & Martin, J. H. (2008). Speech and Language Processing.
-Available online at: https://web.stanford.edu/~jurafsky/slp3/
-
 ### Task 2
 
 #### Goal
@@ -86,7 +88,7 @@ The goal of this task is to create 10,000 characters of text that resembles Engl
 #### How It Works
 
 #### Predicting Characters:
-I start the text generating process with "TH" and work my way up from there.
+I start the text-generating process with "TH" and work my way up from there.
 The code looks for trigrams in the model that begin with the string's final two characters for every new character.
 More frequent patterns in the original text have a higher chance of being selected as the following character because it is determined by the trigram frequency. As a result, the created text has a natural flow that mimics typical English letter pairings.
 
@@ -123,7 +125,7 @@ generated_text = generate_text(trigram_model, seed="TH", length=10000)
 ```
 
 #### Analyzed the Text: 
-I split the generated text into seperate words and checked each one against the valid words in words.txt. This allowed me to count how many of the words were valid English words. Then, I calculated the percentage of valid words in the total text.
+I split the generated text into separate words and checked each one against the valid words in words.txt. This allowed me to count how many of the words were valid English words. Then, I calculated the percentage of valid words in the total text.
 
 ```
 valid_word_count, total_word_count = count_valid_words(generated_text, valid_words)
