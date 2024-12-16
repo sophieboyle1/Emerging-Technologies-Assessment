@@ -152,8 +152,6 @@ The JSON file, trigrams.json, contains all the trigrams and their frequencies, s
 
 ```
 
-#### Testing
-
 ### Eliza Chatbot
 
 #### Overview
@@ -224,8 +222,60 @@ To ensure the chatbot performs as expected:
 2. Browser Compatibility: Test the chatbot on different browsers to confirm consistent behavior.
 3. User Input Scenarios: Input diverse phrases to evaluate ELIZA's responses.
 
+To ensure the accuracy and reliability of both the trigram model, I conducted a series of tests. Below is an overview of the testing process, including sample code and results.
 
-### References - 
+#### Test 1: Verify Text Cleaning
+
+Goal: Ensure that the `clean_text` function properly processes input by removing unwanted characters and converting text to uppercase.
+Sample Input: `"Hello, World! 123. This is a test text."`
+Expected Output: `"HELLO WORLD. THIS IS A TEST TEXT."`
+Result:
+```
+Test 1 Passed: Text cleaned successfully.
+Cleaned text: HELLO WORLD. THIS IS A TEST TEXT.
+```
+#### Test 2: Validate Trigram Model
+Goal: Check that the trigram model correctly counts the occurrences of three-character sequences in the input text.
+Sample Input: `"ABCABC"`
+Expected Output: `{"ABC": 2, "BCA": 1, "CAB": 1}`
+Result:
+```
+Test 2 Passed: Trigram model counts are correct.
+Trigrams generated from 'ABCABC': {'ABC': 2, 'BCA': 1, 'CAB': 1}
+```
+#### Test 3: Check Trigram Model for Short Text
+Goal: Ensure no trigrams are generated when the input text is shorter than three characters.
+Sample Input: `"AB"`
+Expected Output: `No trigrams generated.`
+Result:
+```
+Test 3 Passed: No trigrams generated for text shorter than 3 characters.
+```
+#### Test 4: Check Valid Words in Generated Text
+Goal: Verify that the `count_valid_words` function accurately counts valid words in the generated text.
+Sample Input:
+Generated Text: `"THIS IS A TEST TEXT WITH SOME INVALID WORDS."`
+Word List: `{"THIS", "IS", "A", "TEST", "TEXT", "WITH", "SOME", "INVALID", "WORDS"}`
+Expected Output: `Valid Words: 9/9`
+Result:
+```
+Test 4 Passed: Valid word count is correct.
+Valid words: 9/9
+```
+#### Test 5: Validate Generated Text Length
+Goal: Ensure the `generate_text` function produces text of the specified length.
+Sample Input:
+Trigram Model: `{"THA": 10, "THE": 20, "THI": 15}`
+Seed: `"TH"`
+Length: `100`
+Expected Output: Generated text of length `100.`
+Result:
+```
+Test 5 Passed: Generated text length is correct.
+Generated text sample: THI 
+```
+
+### References 
 
 - **Reading and Writing Files in Python**  
   - [Python File I/O Documentation](https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files)  
