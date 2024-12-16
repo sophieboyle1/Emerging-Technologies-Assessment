@@ -27,17 +27,13 @@ To get started with this project, follow the steps below:
 
 ### Overview 
 
-- **For my Emerging Technologies Project, I worked on two key components - a trigram language model and an implementation of the ELIZA chatbot.**
-- **The first part of the project involved creating a third-order letter approximation model. Using text data from public domain English texts from Project Gutenberg, I analyzed patterns of three consecutive characters to better understand the structure of written English. The model generates text based on these patterns, producing outputs that resemble natural English.**
-- **The second part of the project was building a modern version of the classic ELIZA chatbot. This involved creating a responsive chatbot in JavaScript. ELIZA responds to user input using pre-defined patterns and reflections, making the interaction feel conversational. I also deployed the chatbot using GitHub Pages, making it accessible online.**
+For my Emerging Technologies Project, I worked on two key components - a trigram language model and an implementation of the ELIZA chatbot.
 
-### ELIZA Chatbot
+The first part of the project involved creating a third-order letter approximation model. Using text data from public domain English texts from Project Gutenberg, I analyzed patterns of three consecutive characters to better understand the structure of written English. The model generates text based on these patterns, producing outputs that resemble natural English.
 
-The ELIZA Chatbot is live and accessible via GitHub Pages.
+The second part of the project was building a modern version of the classic ELIZA chatbot. This involved creating a responsive chatbot in JavaScript. ELIZA responds to user input using pre-defined patterns and reflections, making the interaction feel conversational. I also deployed the chatbot using GitHub Pages, making it accessible online.
 
-🔗 [Access the ELIZA Chatbot](https://sophieboyle1.github.io/Emerging-Technologies-Assessment/)
-
-### Task 1 -
+### Task 1
 
 #### Third-Order Letter Approximation Model
 The main goal here is to create a trigram model based on five books from Project Gutenberg. By analyzing sequences of three characters, the model can predict the next letter in a text, which allows to generate sentences that somewhat resemble English writing.
@@ -81,7 +77,7 @@ Available online at: https://www.sciencedirect.com/science/article/abs/pii/S0885
 -Jurafsky, D., & Martin, J. H. (2008). Speech and Language Processing.
 Available online at: https://web.stanford.edu/~jurafsky/slp3/
 
-### Task 2 -
+### Task 2
 
 #### Goal
 
@@ -103,7 +99,7 @@ To see if the output looks like English, the first 1,000 characters are printed.
 Character selection will be somewhat random because it is dependent on probability. The material may appear to be in English, yet it may contain odd sentences or gibberish.
 By calculating the quantity of identifiable English terms, Task 3 will examine the created text's resemblance to authentic English in greater detail.
 
-### Task 3 -
+### Task 3
 
 #### Goal
 
@@ -135,7 +131,7 @@ valid_word_percentage = (valid_word_count / total_word_count) * 100
 
 ```
 
-### Task 4 - 
+### Task 4
 
 #### Goal
 
@@ -156,7 +152,9 @@ The JSON file, trigrams.json, contains all the trigrams and their frequencies, s
 
 ```
 
-### Eliza Chatbot -
+#### Testing
+
+### Eliza Chatbot
 
 #### Overview
 
@@ -185,7 +183,9 @@ The ELIZA chatbot is located in the eliza folder of the repository. Here's what 
 
 #### Live Demo
 
-[Access the ELIZA Chatbot](https://sophieboyle1.github.io/Emerging-Technologies-Assessment/)
+The ELIZA Chatbot is live and accessible via GitHub Pages.
+
+🔗 [Access the ELIZA Chatbot](https://sophieboyle1.github.io/Emerging-Technologies-Assessment/)
 
 #### How It Works
 
